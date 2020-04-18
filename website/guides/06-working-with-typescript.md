@@ -4,6 +4,15 @@ title: Working with TypeScript
 
 Crank is written in TypeScript, and provides some types out of box so you can type-check your components and elements.
 
+## Importing `createElement`
+
+In TypeScript we will get "createElement is not defined" if we don't define the jsx directive and the Crank import like this:
+
+```tsx
+/** @jsx Crank.createElement */
+import * as Crank from '@bikeshaving/crank'
+```
+
 ## Typing `this` in components
 Trying to reference `this` in a component without a `this` type annotation will throw a type error in TypeScript‘s strict mode (you’ll see a message like `'this' implicitly has type 'any' because it does not have a type annotation`). Crank exports the `Context` class so you can annotate your components `this` as `Context`:
 
